@@ -5,65 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kee3 | Clan</title>
     <style>
-        * { box-sizing: border-box; }
         body, html {
             margin: 0; padding: 0; height: 100%;
             font-family: 'Inter', sans-serif; background-color: #050505;
             display: flex; justify-content: center; align-items: center;
             overflow: hidden; color: white;
         }
-
-        /* Анимированный туман как на видео */
-        .bg-vibe {
+        /* Анимированный фон */
+        .bg {
             position: absolute; width: 100%; height: 100%;
             background: radial-gradient(circle at 50% 50%, #132727 0%, #050505 100%);
             z-index: -1;
         }
         .blob {
             position: absolute; width: 1000px; height: 1000px;
-            background: radial-gradient(circle, rgba(20, 55, 55, 0.5) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(20, 55, 55, 0.4) 0%, transparent 70%);
             filter: blur(100px); border-radius: 50%;
-            animation: move 12s infinite alternate ease-in-out;
+            animation: move 15s infinite alternate ease-in-out;
         }
-        @keyframes move {
-            from { transform: translate(-30%, -30%) scale(1); }
-            to { transform: translate(20%, 20%) scale(1.2); }
-        }
+        @keyframes move { from { transform: translate(-30%, -30%); } to { transform: translate(20%, 20%); } }
 
-        .main { text-align: center; z-index: 1; width: 100%; max-width: 540px; }
+        /* Широкий контейнер как на видео */
+        .main { text-align: center; z-index: 1; width: 100%; max-width: 540px; padding: 20px; }
         
         .logo {
             width: 150px; height: 150px; border-radius: 35px;
             margin-bottom: 15px; border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 20px 60px rgba(0,0,0,0.7);
         }
-
         h1 { font-size: 4.2rem; margin: 0; letter-spacing: -4px; font-weight: 800; }
         .sub { color: #888; margin-bottom: 40px; font-size: 1.1rem; }
 
         /* Сетка 3х2 как на видео */
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-
+        
         .btn {
             background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 20px 0; border-radius: 18px; color: white;
             text-decoration: none; font-size: 1rem; backdrop-filter: blur(15px);
-            transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition: 0.3s;
         }
-        .btn:hover {
-            background: rgba(255, 255, 255, 0.1); transform: translateY(-6px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Чтобы на телефоне не ломалось */
-        @media (max-width: 500px) {
-            .grid { grid-template-columns: repeat(2, 1fr); }
-            h1 { font-size: 3rem; }
-        }
+        .btn:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-5px); }
     </style>
 </head>
 <body>
-    <div class="bg-vibe"><div class="blob"></div></div>
+    <div class="bg"><div class="blob"></div></div>
     <div class="main">
         <img src="https://i.pinimg.com/736x/1f/05/e6/1f05e6cb522cc355812f8f7c4685ea01.jpg" class="logo">
         <h1>Kee3</h1>
