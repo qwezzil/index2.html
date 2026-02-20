@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kee3 | Clan</title>
     <style>
+        /* Общие настройки для всего экрана */
         body, html {
             margin: 0; padding: 0; height: 100%;
             font-family: 'Inter', sans-serif; background-color: #050505;
             display: flex; justify-content: center; align-items: center;
             overflow: hidden; color: white;
         }
-        /* Анимированный фон */
+
+        /* Анимированный фон (туман) */
         .bg {
             position: absolute; width: 100%; height: 100%;
             background: radial-gradient(circle at 50% 50%, #132727 0%, #050505 100%);
@@ -25,24 +27,36 @@
         }
         @keyframes move { from { transform: translate(-30%, -30%); } to { transform: translate(20%, 20%); } }
 
-        /* Широкий контейнер как на видео */
-        .main { text-align: center; z-index: 1; width: 100%; max-width: 540px; padding: 20px; }
+        /* Контейнер: теперь он ШИРОКИЙ (540px вместо 200px) */
+        .main { 
+            text-align: center; z-index: 1; 
+            width: 100%; 
+            max-width: 540px; /* Это ключевое изменение для ширины */
+            padding: 20px; 
+        }
         
         .logo {
             width: 150px; height: 150px; border-radius: 35px;
             margin-bottom: 15px; border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 20px 60px rgba(0,0,0,0.7);
         }
+
         h1 { font-size: 4.2rem; margin: 0; letter-spacing: -4px; font-weight: 800; }
         .sub { color: #888; margin-bottom: 40px; font-size: 1.1rem; }
 
-        /* Сетка 3х2 как на видео */
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        /* Сетка: теперь 3 колонки как на видео */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); /* 3 колонки в ряд */
+            gap: 15px; 
+        }
         
         .btn {
-            background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.04); 
+            border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 20px 0; border-radius: 18px; color: white;
-            text-decoration: none; font-size: 1rem; backdrop-filter: blur(15px);
+            text-decoration: none; font-size: 1rem; 
+            backdrop-filter: blur(15px); /* Эффект стекла */
             transition: 0.3s;
         }
         .btn:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-5px); }
